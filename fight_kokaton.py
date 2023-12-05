@@ -167,7 +167,7 @@ class Score:
         引数 screen：画面Surface
         """
         self.img = self.font.render(f"スコア{self.score}", 0, self.color)
-        screen.blit(self.img, self.rct)
+        screen.blit(self.img, self.rct) # スコア表示を画面に貼り付け
 
 
 def main():
