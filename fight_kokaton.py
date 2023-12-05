@@ -130,6 +130,9 @@ class Bomb:
 
 
 class Beam:
+    """
+    ビームに関するクラス
+    """
     def __init__(self, bird: Bird):
         self.img = pg.image.load(f"{MAIN_DIR}/fig/beam.png")
         self.rct = self.img.get_rect()
@@ -147,13 +150,16 @@ class Beam:
 
 
 class Score:
+    """
+    スコアに関するクラス
+    """
     def __init__(self):
-        self.font = pg.font.SysFont("hgp創英角ﾎﾟｯﾌﾟ体", 30)
-        self.color = (0, 0, 255)
-        self.score = 0 
-        self.img = self.font.render(f"スコア：{self.score}", 0, self.color)
-        self.rct = self.img.get_rect()
-        self.rct.center = 100, 850
+        self.font = pg.font.SysFont("hgp創英角ﾎﾟｯﾌﾟ体", 30) # フォント設定
+        self.color = (0, 0, 255) # 色の設定
+        self.score = 0 # スコアの初期状態
+        self.img = self.font.render(f"スコア：{self.score}", 0, self.color) # 文字Surfaceの生成
+        self.rct = self.img.get_rect() # rectをゲットする
+        self.rct.center = 100, 850 # 座標
 
     def update(self, screen:pg.Surface):
         """
